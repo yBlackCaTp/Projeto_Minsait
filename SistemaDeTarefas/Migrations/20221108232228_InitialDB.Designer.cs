@@ -11,7 +11,7 @@ using SistemaDeTarefas.Data;
 namespace SistemaDeTarefas.Migrations
 {
     [DbContext(typeof(SistemaDeTarefasDBContext))]
-    [Migration("20221108142500_InitialDB")]
+    [Migration("20221108232228_InitialDB")]
     partial class InitialDB
     {
         /// <inheritdoc />
