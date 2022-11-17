@@ -10,5 +10,7 @@ namespace SistemaDeTarefas.Models
         public string? Descricao { get; set; }
 
         public StatusTarefa Status { get; set; }
+
+        public virtual List<UsuarioModel> Usuarios { get; set; }
     }
 }

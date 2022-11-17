@@ -12,7 +12,7 @@ namespace SistemaDeTarefas.Data.Map
             builder.HasKey(x => x.Id);
             builder.Property(x => x.Nome).IsRequired().HasMaxLength(255);
             builder.Property(x => x.Email).IsRequired().HasMaxLength(150);
-
+           /// builder.HasOne(x => x.Tarefa).WithMany(x => x.Usuarios).HasForeignKey(x => x.IdTarefa).IsRequired(false);
 
 
 
