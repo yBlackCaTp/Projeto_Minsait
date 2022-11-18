@@ -45,7 +45,7 @@ namespace SistemaDeTarefas.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("TarefaModel");
+                    b.ToTable("Tarefas");
                 });
 
             modelBuilder.Entity("SistemaDeTarefas.Models.UsuarioModel", b =>
@@ -61,26 +61,26 @@ namespace SistemaDeTarefas.Migrations
                         .HasMaxLength(150)
                         .HasColumnType("character varying(150)");
 
-                    b.Property<int?>("IdTarefa")
-                        .HasColumnType("integer");
-
                     b.Property<string>("Nome")
                         .IsRequired()
                         .HasMaxLength(255)
                         .HasColumnType("character varying(255)");
 
+                    b.Property<int?>("TarefaId")
+                        .HasColumnType("integer");
+
                     b.HasKey("Id");
 
-                    b.HasIndex("IdTarefa");
+                    b.HasIndex("TarefaId");
 
-                    b.ToTable("UsuarioModel");
+                    b.ToTable("Usuarios");
                 });
 
             modelBuilder.Entity("SistemaDeTarefas.Models.UsuarioModel", b =>
                 {
                     b.HasOne("SistemaDeTarefas.Models.TarefaModel", "Tarefa")
                         .WithMany("Usuarios")
-                        .HasForeignKey("IdTarefa");
+                        .HasForeignKey("TarefaId");
 
                     b.Navigation("Tarefa");
                 });

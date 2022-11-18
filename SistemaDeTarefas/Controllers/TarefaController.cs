@@ -8,11 +8,11 @@ namespace SistemaDeTarefas.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class tarefaContorller : ControllerBase
+    public class TarefaController : ControllerBase
     {
         private readonly ITarefaRepositorio _tarefaRepositorio;
 
-        public tarefaContorller ( ITarefaRepositorio tarefaRespositorio)
+        public TarefaController( ITarefaRepositorio tarefaRespositorio)
         {
             _tarefaRepositorio = tarefaRespositorio;
 

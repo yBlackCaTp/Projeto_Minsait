@@ -9,6 +9,11 @@ namespace SistemaDeTarefas.Repositorios
     {
         private readonly SistemaDeTarefasDBContext _dbContext;
 
+        public TarefaRepositorio (SistemaDeTarefasDBContext sistemaDeTarefasDBContext)
+        {
+            _dbContext = sistemaDeTarefasDBContext;
+        }
+
         public Task<TarefaModel> Adicionar(TarefaModel tarefa)
         {
             throw new NotImplementedException();
@@ -29,14 +34,14 @@ namespace SistemaDeTarefas.Repositorios
             throw new NotImplementedException();
         }
 
-        public Task<List<TarefaModel>> BuscarTarefas()
-        {
-            throw new NotImplementedException();
-        }
+        //public Task<List<TarefaModel>> BuscarTarefas()
+        //{
+        //    throw new NotImplementedException();
+        //}
 
-        public Task<List<TarefaModel>> BuscarTodostarefas()
+        public async Task<List<TarefaModel>> BuscarTodostarefas()
         {
-            throw new NotImplementedException();
+            return await _dbContext.Tarefas.Include(x => x.Usuarios).ToListAsync();
         }
     }
 

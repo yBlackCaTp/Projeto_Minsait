@@ -36,7 +36,7 @@ if (app.Environment.IsDevelopment())
 app.UseSwagger();
 app.UseSwaggerUI();
 
-///InitialMigration.RestoreMigration(app);
+InitialMigration.RestoreMigration(app);
 
 app.UseHttpsRedirection();
 

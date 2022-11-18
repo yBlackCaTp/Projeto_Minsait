@@ -4,7 +4,7 @@ namespace SistemaDeTarefas.Repositorios.Interfaces
 {
     public interface ITarefaRepositorio
     {
-        Task<List<TarefaModel>> BuscarTarefas();
+       /// Task<List<TarefaModel>> BuscarTarefas();
 
         Task<TarefaModel> BuscarPorId(int id);
 

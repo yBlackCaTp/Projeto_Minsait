@@ -17,7 +17,7 @@ namespace SistemaDeTarefas.Repositorios
 
         public async Task<UsuarioModel> BuscarPorId(int id)
         {
-            return await _dbContext.Usuarios.FirstOrDefaultAsync(x => x.Id == id);
+            return await _dbContext.Usuarios.Include(x => x.Tarefa).FirstOrDefaultAsync(x => x.Id == id);
 
         }
 
@@ -28,7 +28,7 @@ namespace SistemaDeTarefas.Repositorios
 
         public async Task<UsuarioModel> Adicionar(UsuarioModel usuario)
         {
-            await _dbContext.Usuarios.AddAsync(usuario);
+             _dbContext.Usuarios.Update(usuario);
             await _dbContext.SaveChangesAsync();
 
             return usuario;

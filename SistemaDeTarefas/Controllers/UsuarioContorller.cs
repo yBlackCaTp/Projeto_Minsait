@@ -37,6 +37,7 @@ namespace SistemaDeTarefas.Controllers
 
         public async Task<ActionResult<UsuarioModel>> Cadastrar([FromBody] UsuarioModel usuarioModel) 
         {
+            
             UsuarioModel usuario = await _usuarioRepositorio.Adicionar(usuarioModel);
             return Ok(usuario);
         }

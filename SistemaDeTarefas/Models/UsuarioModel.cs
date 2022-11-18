@@ -10,9 +10,7 @@ namespace SistemaDeTarefas.Models
 
         public string? Email { get; set; }
 
-
-        [ForeignKey("usuarioID")]
-        public TarefaModel? tarefa { get; set; }
+        public TarefaModel? Tarefa { get; set; }
     }
 
 }
