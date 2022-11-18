@@ -30,7 +30,7 @@ namespace SistemaDeTarefas.Controllers
         public async Task<ActionResult<List<UsuarioModel>>> BuscarPorId(int id)
         {
             UsuarioModel usuario = await _usuarioRepositorio.BuscarPorId(id);
-            return Ok();
+            return Ok(usuario);
         }
 
         [HttpPost]

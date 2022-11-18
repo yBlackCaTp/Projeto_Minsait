@@ -1,4 +1,5 @@
 ﻿using SistemaDeTarefas.Enums;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SistemaDeTarefas.Models
 {
@@ -11,6 +12,9 @@ namespace SistemaDeTarefas.Models
 
         public StatusTarefa Status { get; set; }
 
-        public virtual List<UsuarioModel> Usuarios { get; set; }
+        /// public virtual List<UsuarioModel> Usuarios { get; set; }
+
+        public int usuarioID { get; set; }
+
     }
 }
